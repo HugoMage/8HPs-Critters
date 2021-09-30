@@ -1,9 +1,6 @@
 package com.hugomage.redpandas;
 
-import com.hugomage.redpandas.entity.AntEntity;
-import com.hugomage.redpandas.entity.GibbonEntity;
-import com.hugomage.redpandas.entity.KoalaEntity;
-import com.hugomage.redpandas.entity.RedPandaEntity;
+import com.hugomage.redpandas.entity.*;
 import com.hugomage.redpandas.init.ModEntityTypes;
 import com.hugomage.redpandas.util.ClientEventBusSubscriber;
 import net.minecraft.block.Block;
@@ -84,6 +81,9 @@ public class RedPandas
         EntitySpawnPlacementRegistry.register(ModEntityTypes.KOALA.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
         EntitySpawnPlacementRegistry.register(ModEntityTypes.GIBBON.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
         EntitySpawnPlacementRegistry.register(ModEntityTypes.ANT.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
+        EntitySpawnPlacementRegistry.register(ModEntityTypes.CARACAL.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
+        EntitySpawnPlacementRegistry.register(ModEntityTypes.GILAMONSTER.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
+        EntitySpawnPlacementRegistry.register(ModEntityTypes.OPOSSUM.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
 
     }
     private void registerEntityAttributes() {
@@ -96,6 +96,9 @@ public class RedPandas
             GlobalEntityTypeAttributes.put(ModEntityTypes.GIBBON.get(), GibbonEntity.setCustomAttributes().build());
             GlobalEntityTypeAttributes.put(ModEntityTypes.KOALA.get(), KoalaEntity.setCustomAttributes().build());
             GlobalEntityTypeAttributes.put(ModEntityTypes.ANT.get(), AntEntity.setCustomAttributes().build());
+            GlobalEntityTypeAttributes.put(ModEntityTypes.CARACAL.get(), CaracalEntity.setCustomAttributes().build());
+            GlobalEntityTypeAttributes.put(ModEntityTypes.GILAMONSTER.get(), GilaMonsterEntity.setCustomAttributes().build());
+            GlobalEntityTypeAttributes.put(ModEntityTypes.OPOSSUM.get(), OpossumEntity.setCustomAttributes().build());
 
 
             // spawning

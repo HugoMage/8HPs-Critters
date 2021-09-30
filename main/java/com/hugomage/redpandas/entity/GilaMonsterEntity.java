@@ -8,15 +8,11 @@ import net.minecraft.entity.ai.attributes.Attributes;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.datasync.DataParameter;
 import net.minecraft.network.datasync.DataSerializers;
 import net.minecraft.network.datasync.EntityDataManager;
-import net.minecraft.util.*;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.DifficultyInstance;
@@ -28,11 +24,11 @@ import net.minecraft.world.server.ServerWorld;
 import javax.annotation.Nullable;
 import java.util.Random;
 
-public class AntEntity extends AnimalEntity {
+public class GilaMonsterEntity extends AnimalEntity {
 
-    private static final DataParameter<Integer> DATA_VARIANT_ID = EntityDataManager.defineId(AntEntity.class, DataSerializers.INT);
+    private static final DataParameter<Integer> DATA_VARIANT_ID = EntityDataManager.defineId(GilaMonsterEntity.class, DataSerializers.INT);
 
-    public AntEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
+    public GilaMonsterEntity(EntityType<? extends AnimalEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -49,7 +45,7 @@ public class AntEntity extends AnimalEntity {
     @Nullable
     @Override
     public AgeableEntity getBreedOffspring(ServerWorld serverWorld, AgeableEntity ageableEntity) {
-        AntEntity orangutan = ModEntityTypes.ANT.get().create(serverWorld);
+        GilaMonsterEntity orangutan = ModEntityTypes.GILAMONSTER.get().create(serverWorld);
         orangutan.setVariant(this.getVariant());
         return orangutan;
     }
@@ -122,7 +118,7 @@ public class AntEntity extends AnimalEntity {
         String s = TextFormatting.stripFormatting(this.getName().getString());
         return s != null && (s.toLowerCase().contains("vaky") && s.toLowerCase().contains("panda"));
     }
-    public static boolean canSpawn(EntityType<AntEntity> type, IWorld world, SpawnReason spawnReason, BlockPos pos, Random random) {
+    public static boolean canSpawn(EntityType<GilaMonsterEntity> type, IWorld world, SpawnReason spawnReason, BlockPos pos, Random random) {
         return (pos.getY() > 50);
     }
 

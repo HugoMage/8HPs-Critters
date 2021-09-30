@@ -1,6 +1,7 @@
 package com.hugomage.redpandas.client.model;
 
 
+import com.hugomage.redpandas.entity.CaracalEntity;
 import com.hugomage.redpandas.entity.KoalaEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -8,7 +9,7 @@ import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.util.math.MathHelper;
 
-public class CaracalModel<T extends KoalaEntity> extends EntityModel<T>  {
+public class CaracalModel<T extends CaracalEntity> extends EntityModel<T>  {
     private final ModelRenderer body;
     private final ModelRenderer rotation;
     private final ModelRenderer rotate_back;
@@ -17,20 +18,23 @@ public class CaracalModel<T extends KoalaEntity> extends EntityModel<T>  {
     private final ModelRenderer back_right_leg2;
     private final ModelRenderer front_left_leg2;
     private final ModelRenderer front_right_leg2;
+    private final ModelRenderer tail3;
+    private final ModelRenderer tail4;
+
 
     public CaracalModel() {
         texWidth = 64;
-        texHeight = 64;
+        texHeight = 32;
 
         body = new ModelRenderer(this);
         body.setPos(0.0F, 6.0F, 6.1F);
 
 
         rotation = new ModelRenderer(this);
-        rotation.setPos(0.0F, 11.0F, -5.1F);
+        rotation.setPos(0.0F, 10.0F, -5.1F);
         body.addChild(rotation);
         setRotationAngle(rotation, 1.5708F, 0.0F, 0.0F);
-        rotation.texOffs(0, 0).addBox(-3.0F, -8.0F, -2.9F, 6.0F, 9.0F, 6.0F, 0.0F, false);
+        rotation.texOffs(24, 0).addBox(-3.0F, -8.0F, -2.9F, 6.0F, 16.0F, 6.0F, 0.0F, false);
 
         rotate_back = new ModelRenderer(this);
         rotate_back.setPos(0.0F, 0.0F, 0.0F);
@@ -41,30 +45,43 @@ public class CaracalModel<T extends KoalaEntity> extends EntityModel<T>  {
         head2 = new ModelRenderer(this);
         head2.setPos(0.0F, -2.0F, -10.0F);
         rotate_back.addChild(head2);
-        head2.texOffs(0, 15).addBox(-2.5F, -2.0F, -1.0F, 5.0F, 5.0F, 3.0F, 0.0F, false);
-        head2.texOffs(0, 0).addBox(-1.0F, -0.02F, -2.0F, 2.0F, 3.0F, 1.0F, 0.0F, false);
-        head2.texOffs(24, 23).addBox(-4.0F, -3.0F, 1.0F, 3.0F, 3.0F, 1.0F, 0.0F, false);
-        head2.texOffs(24, 8).addBox(1.0F, -3.0F, 1.0F, 3.0F, 3.0F, 1.0F, 0.0F, false);
+        head2.texOffs(1, 1).addBox(-3.0F, -2.0F, -2.0F, 6.0F, 4.0F, 4.0F, 0.0F, false);
+        head2.texOffs(0, 24).addBox(-1.5F, -0.02F, -3.0F, 3.0F, 2.0F, 2.0F, 0.0F, false);
+        head2.texOffs(0, 10).addBox(-3.0F, -4.0F, 0.0F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+        head2.texOffs(6, 10).addBox(1.0F, -4.0F, 0.0F, 2.0F, 2.0F, 1.0F, 0.0F, false);
+        head2.texOffs(0, 0).addBox(-4.0F, -5.0F, 0.0F, 2.0F, 1.0F, 0.0F, 0.0F, false);
+        head2.texOffs(0, 0).addBox(2.0F, -5.0F, 0.0F, 2.0F, 1.0F, 0.0F, 0.0F, false);
 
         back_left_leg2 = new ModelRenderer(this);
-        back_left_leg2.setPos(-1.1F, 1.0F, -3.0F);
+        back_left_leg2.setPos(-1.1F, 1.0F, 4.0F);
         rotate_back.addChild(back_left_leg2);
-        back_left_leg2.texOffs(24, 0).addBox(-2.0F, 1.0F, 1.1F, 3.0F, 5.0F, 3.0F, 0.0F, false);
+        back_left_leg2.texOffs(8, 13).addBox(-2.0F, 0.0F, 0.0F, 2.0F, 7.0F, 3.0F, 0.0F, false);
 
         back_right_leg2 = new ModelRenderer(this);
-        back_right_leg2.setPos(1.1F, 1.0F, -3.0F);
+        back_right_leg2.setPos(1.1F, 1.0F, 4.0F);
         rotate_back.addChild(back_right_leg2);
-        back_right_leg2.texOffs(12, 23).addBox(-1.0F, 1.0F, 1.1F, 3.0F, 5.0F, 3.0F, 0.0F, false);
+        back_right_leg2.texOffs(8, 13).addBox(0.0F, 0.0F, 0.0F, 2.0F, 7.0F, 3.0F, 0.0F, false);
 
         front_left_leg2 = new ModelRenderer(this);
-        front_left_leg2.setPos(-1.2F, -3.0F, -7.0F);
+        front_left_leg2.setPos(-1.2F, -3.0F, -6.0F);
         rotate_back.addChild(front_left_leg2);
-        front_left_leg2.texOffs(0, 23).addBox(-2.0F, 5.0F, 0.0F, 3.0F, 5.0F, 3.0F, 0.0F, false);
+        front_left_leg2.texOffs(48, 0).addBox(-2.0F, 0.0F, -1.0F, 2.0F, 11.0F, 3.0F, 0.0F, false);
 
         front_right_leg2 = new ModelRenderer(this);
-        front_right_leg2.setPos(1.2F, -3.0F, -7.0F);
+        front_right_leg2.setPos(1.2F, -3.0F, -6.0F);
         rotate_back.addChild(front_right_leg2);
-        front_right_leg2.texOffs(16, 15).addBox(-1.0F, 5.0F, 0.0F, 3.0F, 5.0F, 3.0F, 0.0F, false);
+        front_right_leg2.texOffs(48, 0).addBox(0.0F, 0.0F, -1.0F, 2.0F, 11.0F, 3.0F, 0.0F, false);
+
+        tail3 = new ModelRenderer(this);
+        tail3.setPos(0.0F, -2.9F, 7.6F);
+        rotate_back.addChild(tail3);
+        setRotationAngle(tail3, 1.1781F, 0.0F, 0.0F);
+
+
+        tail4 = new ModelRenderer(this);
+        tail4.setPos(0.0F, 7.8F, -1.25F);
+        tail3.addChild(tail4);
+        tail4.texOffs(0, 15).addBox(-0.5F, -7.8F, 0.25F, 1.0F, 8.0F, 1.0F, 0.0F, false);
     }
 
 

@@ -2,10 +2,7 @@ package com.hugomage.redpandas.util;
 
 
 import com.hugomage.redpandas.RedPandas;
-import com.hugomage.redpandas.client.renderer.AntRenderer;
-import com.hugomage.redpandas.client.renderer.GibbonRenderer;
-import com.hugomage.redpandas.client.renderer.KoalaRenderer;
-import com.hugomage.redpandas.client.renderer.RedPandaRenderer;
+import com.hugomage.redpandas.client.renderer.*;
 import com.hugomage.redpandas.init.ModEntityTypes;
 import com.hugomage.redpandas.item.ModSpawnEggItem;
 import net.minecraft.client.renderer.RenderType;
@@ -31,7 +28,9 @@ public class ClientEventBusSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.KOALA.get(), KoalaRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GIBBON.get(), GibbonRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ANT.get(), AntRenderer::new);
-
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CARACAL.get(), CaracalRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GILAMONSTER.get(), GilaMonsterRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.OPOSSUM.get(), OpossumRenderer::new);
 
     }
 
