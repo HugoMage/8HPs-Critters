@@ -1,5 +1,6 @@
 package com.hugomage.redpandas;
 
+import com.hugomage.redpandas.entity.AntEntity;
 import com.hugomage.redpandas.entity.GibbonEntity;
 import com.hugomage.redpandas.entity.KoalaEntity;
 import com.hugomage.redpandas.entity.RedPandaEntity;
@@ -82,6 +83,7 @@ public class RedPandas
         EntitySpawnPlacementRegistry.register(ModEntityTypes.REDPANDA.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
         EntitySpawnPlacementRegistry.register(ModEntityTypes.KOALA.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
         EntitySpawnPlacementRegistry.register(ModEntityTypes.GIBBON.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
+        EntitySpawnPlacementRegistry.register(ModEntityTypes.ANT.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
 
     }
     private void registerEntityAttributes() {
@@ -93,6 +95,7 @@ public class RedPandas
             GlobalEntityTypeAttributes.put(ModEntityTypes.REDPANDA.get(), RedPandaEntity.setCustomAttributes().build());
             GlobalEntityTypeAttributes.put(ModEntityTypes.GIBBON.get(), GibbonEntity.setCustomAttributes().build());
             GlobalEntityTypeAttributes.put(ModEntityTypes.KOALA.get(), KoalaEntity.setCustomAttributes().build());
+            GlobalEntityTypeAttributes.put(ModEntityTypes.ANT.get(), AntEntity.setCustomAttributes().build());
 
 
             // spawning

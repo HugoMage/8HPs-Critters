@@ -2,6 +2,7 @@ package com.hugomage.redpandas.util;
 
 
 import com.hugomage.redpandas.RedPandas;
+import com.hugomage.redpandas.client.renderer.AntRenderer;
 import com.hugomage.redpandas.client.renderer.GibbonRenderer;
 import com.hugomage.redpandas.client.renderer.KoalaRenderer;
 import com.hugomage.redpandas.client.renderer.RedPandaRenderer;
@@ -29,6 +30,7 @@ public class ClientEventBusSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.REDPANDA.get(), RedPandaRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.KOALA.get(), KoalaRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GIBBON.get(), GibbonRenderer::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.ANT.get(), AntRenderer::new);
 
 
     }

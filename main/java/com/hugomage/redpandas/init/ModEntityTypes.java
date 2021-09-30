@@ -3,6 +3,7 @@ package com.hugomage.redpandas.init;
 
 
 import com.hugomage.redpandas.RedPandas;
+import com.hugomage.redpandas.entity.AntEntity;
 import com.hugomage.redpandas.entity.GibbonEntity;
 import com.hugomage.redpandas.entity.KoalaEntity;
 import com.hugomage.redpandas.entity.RedPandaEntity;
@@ -29,6 +30,10 @@ public class ModEntityTypes {
             EntityType.Builder.of(KoalaEntity::new, EntityClassification.CREATURE)
                     .sized(0.8f,0.9f)
                     .build(new ResourceLocation(RedPandas.MOD_ID, "koala").toString()));
+    public static final RegistryObject<EntityType<com.hugomage.redpandas.entity.AntEntity>> ANT = ENTITY_TYPES.register("ant", ()->
+            EntityType.Builder.of(AntEntity::new, EntityClassification.CREATURE)
+                    .sized(0.8f,0.9f)
+                    .build(new ResourceLocation(RedPandas.MOD_ID, "ant").toString()));
 
 
 }
