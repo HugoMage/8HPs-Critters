@@ -31,7 +31,7 @@ public class ClientEventBusSubscriber {
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.CARACAL.get(), CaracalRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.GILAMONSTER.get(), GilaMonsterRenderer::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.OPOSSUM.get(), OpossumRenderer::new);
-
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.TAMANDUA.get(), TamanduaRenderer::new);
     }
 
 

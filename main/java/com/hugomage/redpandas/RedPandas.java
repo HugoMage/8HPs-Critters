@@ -84,6 +84,7 @@ public class RedPandas
         EntitySpawnPlacementRegistry.register(ModEntityTypes.CARACAL.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
         EntitySpawnPlacementRegistry.register(ModEntityTypes.GILAMONSTER.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
         EntitySpawnPlacementRegistry.register(ModEntityTypes.OPOSSUM.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
+        EntitySpawnPlacementRegistry.register(ModEntityTypes.TAMANDUA.get(), EntitySpawnPlacementRegistry.PlacementType.ON_GROUND, Heightmap.Type.MOTION_BLOCKING, AnimalEntity::checkAnimalSpawnRules);
 
     }
     private void registerEntityAttributes() {
@@ -99,7 +100,7 @@ public class RedPandas
             GlobalEntityTypeAttributes.put(ModEntityTypes.CARACAL.get(), CaracalEntity.setCustomAttributes().build());
             GlobalEntityTypeAttributes.put(ModEntityTypes.GILAMONSTER.get(), GilaMonsterEntity.setCustomAttributes().build());
             GlobalEntityTypeAttributes.put(ModEntityTypes.OPOSSUM.get(), OpossumEntity.setCustomAttributes().build());
-
+            GlobalEntityTypeAttributes.put(ModEntityTypes.TAMANDUA.get(), TamanduaEntity.setCustomAttributes().build());
 
             // spawning
 

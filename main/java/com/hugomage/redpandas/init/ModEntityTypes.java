@@ -43,6 +43,10 @@ public class ModEntityTypes {
             EntityType.Builder.of(OpossumEntity::new, EntityClassification.CREATURE)
                     .sized(0.8f,0.9f)
                     .build(new ResourceLocation(RedPandas.MOD_ID, "opossum").toString()));
+    public static final RegistryObject<EntityType<com.hugomage.redpandas.entity.TamanduaEntity>> TAMANDUA = ENTITY_TYPES.register("tamandua", ()->
+            EntityType.Builder.of(TamanduaEntity::new, EntityClassification.CREATURE)
+                    .sized(0.8f,0.9f)
+                    .build(new ResourceLocation(RedPandas.MOD_ID, "tamandua").toString()));
 
 
 }

@@ -35,6 +35,7 @@ public class RegistryHandler {
     public static final RegistryObject<ModSpawnEggItem> CARACAL_SPAWN_EGG = ITEMS.register("caracal_spawn_egg",() -> new ModSpawnEggItem(ModEntityTypes.CARACAL, 0xc67534, 0x503124, new Item.Properties().tab(ItemGroup.TAB_MATERIALS)));
     public static final RegistryObject<ModSpawnEggItem> GILA_MONSTER_SPAWN_EGG = ITEMS.register("gila_monster_spawn_egg",() -> new ModSpawnEggItem(ModEntityTypes.GILAMONSTER, 0xc67534, 0x503124, new Item.Properties().tab(ItemGroup.TAB_MATERIALS)));
     public static final RegistryObject<ModSpawnEggItem> OPOSSUM_SPAWN_EGG = ITEMS.register("opossum_spawn_egg",() -> new ModSpawnEggItem(ModEntityTypes.OPOSSUM, 0xc67534, 0x503124, new Item.Properties().tab(ItemGroup.TAB_MATERIALS)));
+    public static final RegistryObject<ModSpawnEggItem> TAMANDUA_SPAWN_EGG = ITEMS.register("tamandua_spawn_egg",() -> new ModSpawnEggItem(ModEntityTypes.TAMANDUA, 0xc67534, 0x503124, new Item.Properties().tab(ItemGroup.TAB_MATERIALS)));
 
     // Music Disc
 
